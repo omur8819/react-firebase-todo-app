@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import './App.css';
 
-function App() {
+import Todo from './Todo';
+
+const App = () => {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
-  console.log(input);
 
   const addTodo = (event) => {
     // this will fire off when we click the button
     event.preventDefault(); //will stop the refresh
-    console.log("I'm working")
     setTodos([...todos, input]);
     setInput(''); // clears up the input after clicking add todo button
   }
@@ -32,7 +32,7 @@ function App() {
 
       <ul>
         {todos.map((todo) => (
-          <li>{todo}</li>
+          <Todo text={todo}/>
         ))}
       
       </ul>
