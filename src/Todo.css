@@ -1,11 +1,23 @@
 .todo__container {
     text-align: center; 
+    
+
 }
 
 .todo__list {
-    margin-left: 450px; 
+   margin-left: 400px; 
 }
 
 .button {
-    margin: 0;
+    margin: 10;
+}
+
+.Modal {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    left: 100px;
+    top: 100px;
+    color: wheat;
+    padding: 20px;
 }

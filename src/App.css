@@ -1,6 +1,8 @@
 body {
   background: rgb(45,89,142);
   background: linear-gradient(90deg, rgba(45,89,142,1) 0%, rgba(69,252,136,1) 100%);
+  overflow-x: hidden;
+  
 }
 
 .App {
