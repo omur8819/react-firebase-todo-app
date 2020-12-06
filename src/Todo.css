@@ -1,4 +1,12 @@
+.todo__container {
+    text-align: center; 
+
+}
+
 .todo__list {
-    text-align: center;
-    
+    margin-left: 450px; 
+}
+
+.button {
+    margin: 0;
 }
