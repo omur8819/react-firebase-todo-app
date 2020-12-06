@@ -22,6 +22,7 @@ function Todo(props) {
         <Modal
             open={open}
             onClose={e => setOpen(false)}
+            
         >
             <div>
                 <h1>{props.todo.todo}</h1>
@@ -35,7 +36,11 @@ function Todo(props) {
                 </ListItemAvatar>
                 <ListItemText primary={props.todo.todo} secondary="Dummy deadline..." />
             </ListItem>
-            <button onClick={e => setOpen(true)}>Edit</button>
+            
+            <Button type="submit" onClick={e => setOpen(true)} variant="contained" color="primary">
+                View
+            </Button>
+
             <DeleteIcon />
             <Button className="button" onClick={event => db.collection('todos').doc(props.todo.id).delete()}> DELETE ME</Button>
             
