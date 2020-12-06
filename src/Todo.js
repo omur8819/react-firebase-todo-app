@@ -1,12 +1,33 @@
-import React from 'react';
-import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Button } from '@material-ui/core';
+import React , { useState, useStyle } from 'react';
+import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Button, Modal } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import db from './firebase';
 
 import './Todo.css';
 
 function Todo(props) {
+    
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => {
+        setOpen(true);
+    }
+
+    const handleClose = () => {
+        setOpen(false);
+    }
+
     return (
+        <>
+        <Modal
+            open={open}
+            onClose={e => setOpen(false)}
+        >
+            <div>
+                <h1>{props.todo.todo}</h1>
+                <button onClick={e => setOpen(false)}></button>
+            </div>
+        </Modal>
         <List className="todo__container">
             <ListItem className="todo__list">
                 <ListItemAvatar>
@@ -14,10 +35,12 @@ function Todo(props) {
                 </ListItemAvatar>
                 <ListItemText primary={props.todo.todo} secondary="Dummy deadline..." />
             </ListItem>
+            <button onClick={e => setOpen(true)}>Edit</button>
             <DeleteIcon />
             <Button className="button" onClick={event => db.collection('todos').doc(props.todo.id).delete()}> DELETE ME</Button>
             
         </List>
+        </>
     )
 }
 
