@@ -1,5 +1,5 @@
-import React , { useState, useStyle } from 'react';
-import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Button, Modal } from '@material-ui/core';
+import React , { useState } from 'react';
+import { List, ListItem, ListItemAvatar, ListItemText, Button, Modal } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import db from './firebase';
